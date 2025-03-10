@@ -76,18 +76,18 @@ $localUserPassword = (New-Object PSCredential $localUserName,$securePassword).Ge
 $securePassword = ConvertTo-SecureString $localUserPassword -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential($localUserName, $securePassword)
 
-Write-Step "Installing the Hops plugin"
+#Write-Step "Installing the Hops plugin"
 
-$yakPath = "C:\Program Files\Rhino 9 WIP\System\Yak.exe"
-$arguments = "install hops"
+#$yakPath = "C:\Program Files\Rhino 9 WIP\System\Yak.exe"
+#$arguments = "install hops"
 
 # Use Start-Process with properly quoted arguments
-$process = Start-Process -FilePath $yakPath -ArgumentList $arguments -Credential $credential -WorkingDirectory "C:\Program Files\Rhino 9 WIP\System" -PassThru -Wait
+#$process = Start-Process -FilePath $yakPath -ArgumentList $arguments -Credential $credential -WorkingDirectory "C:\Program Files\Rhino 9 WIP\System" -PassThru -Wait
 
-if ($process.ExitCode -ne 0) {
-    Write-Error "Failed to install the Hops plugin. Exit code: $($process.ExitCode)"
-    exit $process.ExitCode
-}
+#if ($process.ExitCode -ne 0) {
+    #Write-Error "Failed to install the Hops plugin. Exit code: $($process.ExitCode)"
+    #exit $process.ExitCode
+#}
 
 Write-Step "Creating application pool"
 CreateAppPool $appPoolName
