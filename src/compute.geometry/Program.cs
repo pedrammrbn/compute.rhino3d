@@ -25,7 +25,7 @@ namespace compute.geometry
             Logging.Init();
 
             RhinoInside.Resolver.Initialize();
-            RhinoInside.Resolver.UseLatest = false;
+            RhinoInside.Resolver.UseLatest = true;
 #if DEBUG
             // Uncomment the following to debug with core Rhino source. This
             // tells compute to use a different RhinoCore than what RhinoInside thinks
