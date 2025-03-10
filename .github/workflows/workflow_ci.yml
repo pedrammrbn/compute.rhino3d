@@ -57,11 +57,11 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '9.0.x'
       - name: revision
         id: revision
         run: |
-          echo "::set-output name=revision::${GITHUB_SHA::8}"
+          echo "::set-output name=revision::${GITHUB_SHA::9}"
       - name: revision number
         shell: pwsh
         run: |
