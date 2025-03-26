@@ -16,7 +16,7 @@ namespace Resthopper.IO
         public double AngleTolerance { get; set; } = 0;
 
         [JsonProperty(PropertyName = "modelunits")]
-        public string ModelUnits { get; set; } = Rhino.UnitSystem.Millimeters.ToString();
+        public string ModelUnits { get; set; } = Rhino.UnitSystem.Meters.ToString();
 
         // Rhino version of data to be serialized and returned to the client
         [JsonProperty(PropertyName = "dataversion")]

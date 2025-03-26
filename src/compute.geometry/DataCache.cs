@@ -265,7 +265,7 @@ namespace compute.geometry
             {
                 var policy = new System.Runtime.Caching.CacheItemPolicy();
                 // no policy yet, but we could do things like evict after 2 weeks with
-                //policy.SlidingExpiration = new TimeSpan(14, 0, 0, 0);
+                policy.SlidingExpiration = new TimeSpan(0, 0, 0, 10);
                 return policy;
             }
         }

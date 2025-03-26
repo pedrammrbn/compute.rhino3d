@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 
 using System.IO;
+using System.Threading;
 
 
 namespace compute.geometry
@@ -21,6 +23,10 @@ namespace compute.geometry
 
         static void Main(string[] args)
         {
+
+            ThreadPool.SetMinThreads(16, 16); // 16 threads for IOCP PEDRAM
+            ThreadPool.SetMaxThreads(32, 32); // 32 threads for IOCP PEDRAM
+
             Config.Load();
             Logging.Init();
 
